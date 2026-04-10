@@ -1,0 +1,60 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[margin=2cm,top=1.8cm,bottom=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{parskip}
+\usepackage[hidelinks]{hyperref}
+
+\setmainfont{DejaVu Sans}[
+  Ligatures=TeX,
+  UprightFeatures={SmallCapsFont=DejaVu Sans Condensed}
+]
+\newfontfamily\headingfont{DejaVu Sans}[BoldFont=DejaVu Sans Bold]
+\newfontfamily\monofont{DejaVu Sans Mono}
+
+\definecolor{accent}{HTML}{4FBC7E}
+\definecolor{dim}{HTML}{6C6C80}
+\definecolor{dark}{HTML}{0C0C0F}
+\definecolor{light}{HTML}{888899}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Section formatting with accent bar
+\titleformat{\section}
+  {\large\bfseries\headingfont\color{dark}}
+  {}{0pt}
+  {\textcolor{accent}{\rule[0.15em]{3pt}{0.8em}}\hspace{0.5em}}
+\titlespacing*{\section}{0pt}{0.9em}{0.4em}
+
+% Entry command: date on left, content on right
+\newcommand{\cventry}[3]{%
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{4.3cm}@{\hspace{0.6em}}X@{}}
+    {\color{dim}\small\monofont #1} & {\textbf{#2}}\\[-0.1em]
+    & {\color{dim}\small #3}
+  \end{tabularx}%
+  \vspace{0.35em}
+}
+
+% Header builder: #1=name, #2=tagline, #3=contact block
+\newcommand{\cvheader}[3]{%
+  \begin{minipage}[c]{0.75\linewidth}
+    {\Huge\bfseries\headingfont\color{dark} #1}\\[0.3em]
+    {\large\color{accent} #2}\\[0.8em]
+    {\small #3}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[c]{0.22\linewidth}
+    \flushright\includegraphics[width=\linewidth]{logo.png}
+  \end{minipage}\\[0.5em]
+  {\color{accent}\rule{\linewidth}{1.2pt}}\\[0.8em]
+}
+
+\begin{document}
+\input{\contentfile}
+\end{document}

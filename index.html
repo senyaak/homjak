@@ -147,6 +147,10 @@
         <svg viewBox="0 0 16 16"><path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-.5L8 7l6-3.5H2zM1 4.5V12a1 1 0 001 1h12a1 1 0 001-1V4.5L8.5 8.25a1 1 0 01-1 0L1 4.5z"/></svg>
         Email
       </a>
+      <a id="cv-link" href="cv-en.pdf" target="_blank" rel="noopener" download>
+        <svg viewBox="0 0 16 16"><path d="M14 14V4.5L9.5 0H4a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2zM9.5 3A1.5 1.5 0 0011 4.5h2V14a1 1 0 01-1 1H4a1 1 0 01-1-1V2a1 1 0 011-1h5.5v2zM4.603 12.087a.81.81 0 01-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 011.482-.645 19.701 19.701 0 00.97-1.944A7.605 7.605 0 016.339 5.27C6.25 4.662 6.378 4.08 7.01 3.896c.327-.095.613-.025.827.13.208.152.336.371.422.586.145.367.204.846.093 1.385-.11.53-.375 1.164-.73 1.834.358.755.789 1.46 1.173 1.994.388-.1.747-.16 1.065-.17.67-.022 1.196.082 1.454.403.143.178.187.384.14.591a.724.724 0 01-.375.454c-.315.172-.692.177-1.065.094-.38-.086-.792-.267-1.2-.505a15.23 15.23 0 00-1.96.453 14.986 14.986 0 01-1.032 1.513c-.31.394-.603.681-.893.83-.3.154-.609.181-.902.03zM7.3 7.515a7.61 7.61 0 00.416-1.1c.085-.408.038-.706-.04-.896-.03-.075-.059-.125-.082-.152a1 1 0 00-.149.136c-.07.093-.084.177-.033.369.051.193.165.412.32.642a12.88 12.88 0 01-.431 1zm.557 1.515c.227.365.454.692.672.97-.276.083-.557.16-.832.226a7.28 7.28 0 00.552-.853c.18-.295.333-.578.467-.836a17.66 17.66 0 01-.394.71 9.14 9.14 0 01-.465.783zm-2.094 3.008a5.1 5.1 0 01-.415.5c-.151.165-.283.279-.389.336-.023.012-.04.02-.05.024.014-.048.048-.156.154-.354.087-.16.21-.352.36-.564.161.023.305.014.34.058zm2.78-2.08a5.92 5.92 0 00.72.276c.124.02.25.018.364-.007.16-.038.252-.09.294-.116a.518.518 0 00-.128-.067c-.182-.068-.455-.117-.841-.098a5.43 5.43 0 00-.409.012z"/></svg>
+        CV
+      </a>
     </div>
   </section>
   <footer class="fade">
@@ -161,8 +165,8 @@ const i18n={
   de:{greeting:"Hallo, ich bin",subtitle:"Fullstack-Entwickler — professionell seit 2018, programmiere aber schon deutlich länger.",section_stack:"Tech-Stack",section_about:"Über mich",section_contact:"Kontakt",about_text:"Fachinformatiker Anwendungsentwicklung, Abschluss 2018. Habe schon Jahre davor angefangen zu entwickeln — über Fernstudium und Selbststudium. Bilde mich seitdem kontinuierlich weiter.",contact_text:"Offen für Freelance-Projekte."},
   ru:{greeting:"Привет, я",subtitle:"Фуллстек-разработчик — профессионально с 2018, но программирую значительно дольше.",section_stack:"Стек",section_about:"Обо мне",section_contact:"Контакт",about_text:"Специалист по разработке программного обеспечения (Fachinformatiker Anwendungsentwicklung), диплом 2018. Начал учиться разработке задолго до этого — дистанционное обучение и самообразование. С тех пор постоянно развиваюсь.",contact_text:"Открыт для фриланс-проектов."}
 };
-function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-bar button').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-bar button[onclick="setLang('${l}')"]`).classList.add('active');document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(i18n[l][k])el.textContent=i18n[l][k]});localStorage.setItem('lang',l)}
-const s=localStorage.getItem('lang');if(s&&i18n[s])setLang(s);
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-bar button').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-bar button[onclick="setLang('${l}')"]`).classList.add('active');document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(i18n[l][k])el.textContent=i18n[l][k]});const cv=document.getElementById('cv-link');if(cv)cv.href=`cv-${l}.pdf`;localStorage.setItem('lang',l)}
+const s=localStorage.getItem('lang');if(s&&i18n[s]){setLang(s)}else{const b=(navigator.language||'en').slice(0,2).toLowerCase();if(i18n[b]&&b!=='en')setLang(b)}
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('show');obs.unobserve(x.target)}})},{threshold:.1});
 document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
 </script>
