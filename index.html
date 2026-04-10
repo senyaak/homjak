@@ -129,7 +129,7 @@
   </section>
   <section class="fade">
     <div class="section-label" data-i18n="section_about">About</div>
-    <p class="about-text" data-i18n="about_text">Fachinformatiker Anwendungsentwicklung (completed 2018). Started learning development years before that — through distance studies and self-teaching. Continuously learning and expanding my skill set ever since.</p>
+    <p class="about-text" data-i18n="about_text">Certified IT Specialist — Application Development (Fachinformatiker Anwendungsentwicklung), 2018. Started learning development years before that — through distance studies and self-teaching. Continuously learning and expanding my skill set ever since.</p>
   </section>
   <section class="fade">
     <div class="section-label" data-i18n="section_contact">Contact</div>
@@ -157,9 +157,9 @@
 </div>
 <script>
 const i18n={
-  en:{greeting:"Hello, I'm",subtitle:"Fullstack developer — building software professionally since 2018, coding since long before that.",section_stack:"Stack",section_about:"About",section_contact:"Contact",about_text:"Fachinformatiker Anwendungsentwicklung (completed 2018). Started learning development years before that — through distance studies and self-teaching. Continuously learning and expanding my skill set ever since.",contact_text:"Open to freelance projects."},
-  de:{greeting:"Hallo, ich bin",subtitle:"Fullstack-Entwickler — professionell seit 2018, programmiere aber schon deutlich länger.",section_stack:"Tech-Stack",section_about:"Über mich",section_contact:"Kontakt",about_text:"Fachinformatiker Anwendungsentwicklung (Abschluss 2018). Habe schon Jahre davor angefangen zu entwickeln — über Fernstudium und Selbststudium. Bilde mich seitdem kontinuierlich weiter.",contact_text:"Offen für Freelance-Projekte."},
-  ru:{greeting:"Привет, я",subtitle:"Фуллстек-разработчик — профессионально с 2018, но программирую значительно дольше.",section_stack:"Стек",section_about:"Обо мне",section_contact:"Контакт",about_text:"Fachinformatiker Anwendungsentwicklung (выпуск 2018). Начал учиться разработке задолго до этого — дистанционное обучение и самообразование. С тех пор постоянно развиваюсь.",contact_text:"Открыт для фриланс-проектов."}
+  en:{greeting:"Hello, I'm",subtitle:"Fullstack developer — building software professionally since 2018, coding since long before that.",section_stack:"Stack",section_about:"About",section_contact:"Contact",about_text:"Certified IT Specialist — Application Development (Fachinformatiker Anwendungsentwicklung), 2018. Started learning development years before that — through distance studies and self-teaching. Continuously learning and expanding my skill set ever since.",contact_text:"Open to freelance projects."},
+  de:{greeting:"Hallo, ich bin",subtitle:"Fullstack-Entwickler — professionell seit 2018, programmiere aber schon deutlich länger.",section_stack:"Tech-Stack",section_about:"Über mich",section_contact:"Kontakt",about_text:"Fachinformatiker Anwendungsentwicklung, Abschluss 2018. Habe schon Jahre davor angefangen zu entwickeln — über Fernstudium und Selbststudium. Bilde mich seitdem kontinuierlich weiter.",contact_text:"Offen für Freelance-Projekte."},
+  ru:{greeting:"Привет, я",subtitle:"Фуллстек-разработчик — профессионально с 2018, но программирую значительно дольше.",section_stack:"Стек",section_about:"Обо мне",section_contact:"Контакт",about_text:"Специалист по разработке программного обеспечения (Fachinformatiker Anwendungsentwicklung), диплом 2018. Начал учиться разработке задолго до этого — дистанционное обучение и самообразование. С тех пор постоянно развиваюсь.",contact_text:"Открыт для фриланс-проектов."}
 };
 function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-bar button').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-bar button[onclick="setLang('${l}')"]`).classList.add('active');document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(i18n[l][k])el.textContent=i18n[l][k]});localStorage.setItem('lang',l)}
 const s=localStorage.getItem('lang');if(s&&i18n[s])setLang(s);
