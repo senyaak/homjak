@@ -5,36 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>404 — Page Not Found · Arsenij Schützer</title>
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#e4dfd2">
 <link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-white-32.png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
   :root{
-    --bg:#0c0c0f;--surface:#141419;--border:#222230;--text:#c8c8d4;
-    --text-dim:#6c6c80;--accent:#6ee7a0;--accent-dim:#6ee7a020;
-    --mono:'JetBrains Mono',monospace;--sans:'Outfit',sans-serif;
+    --desk:#e4dfd2;--paper:#efe9dd;--paper-hi:#fbf8f1;
+    --ink:#17161d;--ink-soft:#2b2822;--mute:#67624f;--rule:#d4ccba;--dots:#b3a992;
+    --accent:#8f2f21;--link:#2a3f8f;
+    --serif:'Petrona',Georgia,'Times New Roman',serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --gut:clamp(44px,9vw,112px);
   }
-  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;text-align:center}
-  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:.5}
-  .wrap{max-width:480px;display:flex;flex-direction:column;align-items:center;gap:1.5rem}
-  .avatar{width:120px;height:120px;background:#fff;border-radius:50%;border:3px solid var(--accent);padding:6px;box-shadow:0 0 32px rgba(110,231,160,.25)}
-  .code{font-family:var(--mono);font-size:.8rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase}
-  h1{font-family:var(--sans);font-weight:600;font-size:clamp(2rem,6vw,2.75rem);color:#efeffa;line-height:1.15;letter-spacing:-.01em}
-  p{color:var(--text-dim);font-size:1rem;max-width:380px}
-  a.home{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.85rem;color:var(--text);text-decoration:none;padding:.75rem 1.25rem;border:1px solid var(--border);border-radius:4px;background:var(--surface);transition:all .25s;margin-top:.5rem}
-  a.home:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);transform:translateY(-1px)}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--desk);color:var(--ink);font-family:var(--serif);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,48px) clamp(8px,3vw,40px)}
+  .sheet{width:100%;max-width:720px;background:var(--paper);border:1px solid #cfc7b6;box-shadow:0 1px 0 var(--paper-hi) inset,0 18px 40px -28px rgba(23,22,29,.45);position:relative;overflow:hidden;padding:clamp(28px,5vw,56px) clamp(16px,4vw,40px) clamp(28px,5vw,56px) var(--gut)}
+  .sheet::before{content:'';position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;background:repeating-linear-gradient(to bottom,transparent 0,transparent 27px,rgba(42,63,143,.07) 27px,rgba(42,63,143,.07) 28px);opacity:.9}
+  .sheet::after{content:'';position:absolute;top:0;bottom:0;left:clamp(28px,7vw,88px);width:1px;background:rgba(143,47,33,.28);pointer-events:none}
+  .sheet>*{position:relative}
+  .label{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1;letter-spacing:-.02em;margin-bottom:18px}
+  p{font-size:clamp(1rem,1.5vw,1.1rem);line-height:1.75;max-width:48ch;color:var(--ink-soft);font-style:italic;margin-bottom:24px}
+  .mount{display:inline-block;background:var(--paper-hi);border:1px solid var(--rule);padding:6px;transform:rotate(-1.4deg);box-shadow:0 10px 24px -18px rgba(23,22,29,.7);margin-bottom:22px}
+  .mount img{display:block;width:120px;height:120px}
+  a.home{display:inline-flex;align-items:baseline;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:10px 2px;border-bottom:1px dotted var(--dots);min-height:44px}
+  a.home:hover{color:var(--link)}
+  a.home .arw{color:var(--accent)}
+  :focus-visible{outline:2px solid var(--link);outline-offset:3px}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <img class="avatar" src="avatar-black.png" alt="" width="120" height="120">
-    <div class="code">Error 404</div>
+  <main class="sheet">
+    <div class="mount"><img src="avatar-black.png" alt="Pencil drawing of a sloth" width="1024" height="1024" decoding="async"></div>
+    <div class="label">Error 404</div>
     <h1>This page is sleeping</h1>
     <p>The page you're looking for doesn't exist — or maybe the sloth is just too lazy to fetch it.</p>
-    <a class="home" href="/">← Back to home</a>
-  </div>
+    <a class="home" href="/"><span class="arw">←</span><span>Back to home</span></a>
+  </main>
 </body>
 </html>

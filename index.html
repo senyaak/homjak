@@ -4,22 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arsenij Schützer — Fullstack Developer</title>
-<meta name="description" content="Arsenij Schützer (Schuetzer, Шютцер, Шутцер) — Fullstack developer from Pforzheim, Germany. Vue.js, Angular, TypeScript, Node.js, C#, Java, PostgreSQL.">
+<meta name="description" content="Arsenij Schützer (Schuetzer, Шютцер, Шутцер) — Fullstack developer from Pforzheim, Germany. Angular, Vue.js, TypeScript, Node.js, C#, Java, SQL, MongoDB.">
 <meta name="keywords" content="Arsenij Schützer, Arsenij Schuetzer, Arseniy Schützer, Arseniy Schuetzer, Арсений Шютцер, Арсений Шутцер, Арсюща Щютцер, Senyaak, Fullstack Developer, Pforzheim">
 <meta name="google-site-verification" content="wPwsWqkcmYavKVc0nziUY4pKYLnSrHUYhxkSvAH44ac">
 <link rel="canonical" href="https://senyaak.work/">
 <meta name="author" content="Arsenij Schützer">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#e4dfd2">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://senyaak.work/">
 <meta property="og:title" content="Arsenij Schützer — Fullstack Developer">
-<meta property="og:description" content="Fullstack developer. Vue.js, Angular, TypeScript, Node.js, C#, Java, PostgreSQL.">
+<meta property="og:description" content="Fullstack developer. Angular, Vue.js, TypeScript, Node.js, C#, Java, SQL, MongoDB.">
 <meta property="og:image" content="https://senyaak.work/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Arsenij Schützer — Fullstack Developer">
-<meta name="twitter:description" content="Fullstack developer. Vue.js, Angular, TypeScript, Node.js, C#, Java, PostgreSQL.">
+<meta name="twitter:description" content="Fullstack developer. Angular, Vue.js, TypeScript, Node.js, C#, Java, SQL, MongoDB.">
 <meta name="twitter:image" content="https://senyaak.work/og-image.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" media="(prefers-color-scheme: light)">
@@ -28,7 +29,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-white-16.png" media="(prefers-color-scheme: dark)">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,7 +51,7 @@
     "@type": "EducationalOrganization",
     "name": "Fachinformatiker Anwendungsentwicklung, saltation GmbH"
   },
-  "knowsAbout": ["Vue.js", "Angular", "TypeScript", "Node.js", "Java", "C#", "PostgreSQL", "Python", "REST APIs"],
+  "knowsAbout": ["Angular", "Vue.js", "TypeScript", "Node.js", "Java", "C#", "Python", "MongoDB", "SQL", "TypeSpec", "Docker", "Linux", "REST APIs"],
   "sameAs": [
     "https://github.com/senyaak",
     "https://linkedin.com/in/senyaak",
@@ -60,160 +62,185 @@
 <style>
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
   :root{
-    --bg:#0c0c0f;--surface:#141419;--border:#222230;--text:#c8c8d4;
-    --text-dim:#6c6c80;--accent:#6ee7a0;--accent-dim:#6ee7a020;
-    --mono:'JetBrains Mono',monospace;--sans:'Outfit',sans-serif;
+    --desk:#e4dfd2;--paper:#efe9dd;--paper-hi:#fbf8f1;--paper-lo:#eae3d5;
+    --ink:#17161d;--ink-soft:#2b2822;--mute:#67624f;--rule:#d4ccba;--dots:#b3a992;
+    --accent:#8f2f21;--link:#2a3f8f;
+    --serif:'Petrona',Georgia,'Times New Roman',serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --gut:clamp(44px,9vw,112px);
+    --pad:clamp(16px,4vw,40px);
   }
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;min-height:100vh;overflow-x:hidden}
-  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:.5}
-  .container{max-width:720px;margin:0 auto;padding:0 1.5rem}
-  .lang-bar{position:fixed;top:1rem;right:1.5rem;z-index:100;display:flex;gap:2px;padding:4px;background:rgba(12,12,15,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:6px}
-  .lang-bar button{background:var(--bg);border:1px solid var(--border);color:var(--text-dim);font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;padding:.45rem .7rem;cursor:pointer;transition:all .2s;text-transform:uppercase;min-height:36px}
-  .lang-bar button:hover{color:var(--text);border-color:var(--text-dim)}
-  .lang-bar button:first-child{border-radius:4px 0 0 4px}
-  .lang-bar button:last-child{border-radius:0 4px 4px 0}
-  .lang-bar button.active{background:var(--accent-dim);border-color:var(--accent);color:var(--accent)}
-  header{padding:6rem 0 3rem}
-  .name-row{display:flex;align-items:center;gap:1.25rem}
-  .name-row h1{margin-bottom:0}
-  .avatar{width:44px;height:44px;flex-shrink:0;display:block;background:#fff;border-radius:50%;border:2px solid var(--accent);padding:3px;box-shadow:0 0 18px rgba(110,231,160,.2)}
-  .greeting{font-family:var(--mono);font-size:.8rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
-  .greeting::before{content:'';width:2rem;height:1px;background:var(--accent)}
-  .greeting::after{content:'';width:.5em;height:1em;background:var(--accent);display:inline-block;animation:blink 1.1s steps(2,start) infinite;margin-left:.1em;vertical-align:-.1em}
-  @keyframes blink{to{visibility:hidden}}
-  h1{font-family:var(--sans);font-weight:600;font-size:clamp(2rem,7vw,3rem);color:#efeffa;line-height:1.15;margin-bottom:.75rem;letter-spacing:-.01em}
-  .subtitle{font-size:clamp(.95rem,2.5vw,1.05rem);color:var(--text-dim);max-width:520px}
-  section{padding:2.5rem 0;border-top:1px solid var(--border)}
-  .section-label{font-family:var(--mono);font-size:.7rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.5rem}
-  .stack-grid{display:flex;flex-wrap:wrap;gap:.5rem}
-  .tag{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.78rem;padding:.4rem .8rem;border:1px solid var(--border);border-radius:4px;color:var(--text);background:var(--surface);transition:transform .25s,border-color .25s,color .25s}
-  .tag:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
-  .tag img{width:16px;height:16px;display:block;flex-shrink:0}
-  .about-text{font-size:.95rem;color:var(--text);max-width:540px;line-height:1.8}
-  .links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.5rem}
-  .links a{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.82rem;color:var(--text);text-decoration:none;padding:.65rem 1rem;border:1px solid var(--border);border-radius:4px;background:var(--surface);transition:transform .25s,border-color .25s,color .25s,background .25s;min-height:44px}
-  .links a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);background:var(--accent-dim)}
-  .links a svg{width:16px;height:16px;fill:currentColor}
-  footer{padding:3rem 0 2rem;border-top:1px solid var(--border);text-align:center}
-  footer p{font-family:var(--mono);font-size:.7rem;color:var(--text-dim)}
-  .impressum-toggle{font-family:var(--mono);font-size:.7rem;color:var(--text-dim);background:none;border:none;cursor:pointer;text-decoration:underline;margin-top:.75rem;padding:.5rem;min-height:36px}
-  .impressum-toggle:hover{color:var(--accent)}
-  .impressum-content{display:none;margin-top:1rem;font-size:.8rem;color:var(--text-dim);border:1px solid var(--border);border-radius:4px;padding:1rem;font-family:var(--mono);line-height:1.6;text-align:left}
-  .impressum-content.open{display:block}
-  .fade{opacity:0;transform:translateY(12px);transition:all .5s ease}
-  .fade.show{opacity:1;transform:none}
-  header h1{opacity:0;transform:translateY(8px);animation:slideUp .7s .2s forwards cubic-bezier(.2,.7,.2,1)}
-  header .avatar{opacity:0;transform:scale(.85);animation:popIn .6s .5s forwards cubic-bezier(.2,.7,.2,1)}
-  header .subtitle{opacity:0;animation:fadeIn .6s .7s forwards}
-  @keyframes slideUp{to{opacity:1;transform:none}}
-  @keyframes popIn{to{opacity:1;transform:none}}
-  @keyframes fadeIn{to{opacity:1}}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
-  button:focus-visible,a:focus-visible{outline-offset:3px}
-  @media (max-width:640px){
-    .container{padding:0 1.25rem}
-    .lang-bar{top:.75rem;right:1rem;padding:3px}
-    .lang-bar button{font-size:.68rem;padding:.4rem .55rem}
-    header{padding:5rem 0 2rem}
-    .greeting{font-size:.75rem;margin-bottom:.75rem}
-    .greeting::before{width:1.25rem}
-    .name-row{gap:1rem}
-    .avatar{width:36px;height:36px;padding:2px}
-    .subtitle{line-height:1.65}
-    section{padding:2rem 0}
-    .section-label{margin-bottom:1.25rem}
-    .tag{font-size:.74rem;padding:.45rem .75rem}
-    .links{gap:.6rem}
-    .links a{flex:1 1 auto;justify-content:center}
-    footer{padding:2.5rem 0 1.5rem}
+  /* Baseline grid: 28px rows. The ruled line sits 20px into each row; every
+     vertical size is a multiple of 28, text baselines land ~1px above a line.
+     A 1px rule that must coincide with a ruled line uses the -8/+7 pattern:
+     margin-top:-8px (border lands on the previous row's line) or
+     padding-bottom:20px + border + margin-bottom:7px (border on this row's line). */
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--desk);color:var(--ink);font-family:var(--serif);line-height:28px;-webkit-font-smoothing:antialiased;padding:clamp(12px,3vw,48px) clamp(8px,3vw,40px)}
+  a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{color:var(--ink)}
+  .sheet{max-width:1080px;margin:0 auto;background:var(--paper);border:1px solid #cfc7b6;box-shadow:0 1px 0 var(--paper-hi) inset,0 18px 40px -28px rgba(23,22,29,.45);position:relative;overflow:hidden}
+  .sheet::before{content:'';position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;background:repeating-linear-gradient(to bottom,transparent 0,transparent 20px,rgba(42,63,143,.07) 20px,rgba(42,63,143,.07) 21px,transparent 21px,transparent 28px);opacity:.9}
+  .sheet::after{content:'';position:absolute;top:0;bottom:0;left:clamp(28px,7vw,88px);width:1px;background:rgba(143,47,33,.28);pointer-events:none}
+  .band{position:relative;margin-top:-8px;border-top:1px solid var(--rule);padding:35px var(--pad) 28px var(--gut)}
+  .label{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+
+  .top{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:0 16px;padding:28px var(--pad) 0 var(--gut)}
+  .top .meta{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
+  .langs{display:flex;gap:6px}
+  .langs button{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;height:34px;line-height:32px;padding:0 11px;cursor:pointer;background:transparent;color:var(--mute);border:1px solid #c9c0ad;transition:all .2s}
+  .langs button:hover{color:var(--ink);border-color:var(--mute)}
+  .langs button[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+
+  header{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:0 clamp(16px,4vw,48px);align-items:end;padding:28px var(--pad) 28px var(--gut)}
+  h1{font-family:var(--serif);font-weight:500;font-size:88px;line-height:84px;letter-spacing:-.02em;position:relative;top:6px;text-wrap:balance}
+  .aka{font-family:var(--mono);font-size:10.5px;color:var(--mute);letter-spacing:.04em;max-width:34ch;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:20px 0 7px;padding:7px 0 20px}
+  .subtitle{font-size:22px;font-style:italic;color:var(--ink-soft);max-width:30ch;position:relative;top:-2px}
+  .plate{justify-self:end;position:relative;width:100%;max-width:340px;container-type:inline-size}
+  .mount{position:relative;background:var(--paper-hi);border:1px solid var(--rule);padding:10px;height:round(up,100cqw,28px);transform:rotate(-1.4deg);box-shadow:0 10px 24px -18px rgba(23,22,29,.7);animation:drop .8s cubic-bezier(.2,.7,.2,1) both}
+  .mount img{display:block;width:100%;height:auto}
+  .mount i{position:absolute;width:22px;height:22px}
+  .mount i:first-of-type{top:-1px;left:-1px;border-top:1px solid var(--accent);border-left:1px solid var(--accent)}
+  .mount i:last-of-type{bottom:-1px;right:-1px;border-bottom:1px solid var(--accent);border-right:1px solid var(--accent)}
+  .caption{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);text-align:right}
+  @keyframes drop{from{opacity:0;transform:translateY(10px) rotate(-1.4deg)}to{opacity:1;transform:translateY(0) rotate(-1.4deg)}}
+
+  .rows{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 clamp(24px,4vw,56px)}
+  .row{display:flex;align-items:flex-start;gap:clamp(12px,2vw,20px);padding-bottom:20px;margin-bottom:7px;border-bottom:1px dotted var(--dots)}
+  .row .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);flex:0 0 clamp(64px,9vw,92px)}
+  .row .v{font-size:22px;letter-spacing:-.01em;position:relative;top:-2px}
+  .row .v .sep{color:var(--dots)}
+  .row.more .v{font-style:italic;color:var(--ink-soft)}
+  .about{font-size:18px;max-width:62ch;color:var(--ink-soft)}
+
+  .contact-head{display:flex;flex-wrap:wrap;align-items:flex-start;gap:0 14px}
+  .contact-head .note{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.04em}
+  .links{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:0 clamp(24px,4vw,56px)}
+  .links a{display:flex;align-items:flex-start;gap:8px;padding-bottom:20px;margin-bottom:7px;border-bottom:1px dotted var(--dots);text-decoration:none;color:var(--ink)}
+  .links a:hover{color:var(--link)}
+  .links .k{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);flex:0 0 68px}
+  .links .v{font-size:18px;flex:1 1 auto}
+  .links a[href^="mailto"] .v{word-break:break-all}
+  .links .arw{font-family:var(--mono);font-size:12px;color:var(--accent)}
+
+  footer{position:relative;margin-top:-8px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:0 14px;padding:35px var(--pad) 28px var(--gut)}
+  footer .loc,.imp-toggle{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+  .imp-toggle{background:none;border:none;border-bottom:1px solid var(--dots);cursor:pointer;padding:0 2px;height:21px;line-height:20px;margin-bottom:7px}
+  .imp-toggle:hover{color:var(--link)}
+  .imp{display:none;position:relative;margin-top:-8px;border-top:1px solid var(--rule);background:var(--paper-lo);padding:35px var(--pad) 28px var(--gut);font-family:var(--mono);font-size:11.5px;color:#3c382f}
+  .imp.open{display:block}
+  .colophon{max-width:1080px;margin:14px auto 0;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#635e50;display:flex;justify-content:space-between;gap:12px}
+
+  :focus-visible{outline:2px solid var(--link);outline-offset:3px}
+
+  @media (max-width:1000px){
+    h1{font-size:60px;line-height:56px;top:1px}
+  }
+  @media (max-width:760px){
+    header{grid-template-columns:minmax(0,1fr)}
+    .plate{justify-self:start;max-width:280px;margin-top:28px}
+    .rows{grid-template-columns:minmax(0,1fr)}
+    .subtitle,.row .v{font-size:20px;top:0}
+  }
+  @media (max-width:420px){
+    h1{font-size:44px;top:6px}
+    .top{flex-wrap:wrap}
+    .top .meta{letter-spacing:.12em}
+    .langs button{height:28px;line-height:26px;padding:0 9px}
+    .row{flex-wrap:wrap;gap:0}
+    .row .k{flex:0 0 100%}
   }
   @media (prefers-reduced-motion:reduce){
-    *,*::before,*::after{transition:none!important;animation:none!important}
-    html{scroll-behavior:auto}
-    .fade{opacity:1;transform:none}
+    *,*::before,*::after{animation:none!important;transition:none!important}
   }
 </style>
 </head>
 <body>
-<div class="lang-bar">
-  <button class="active" onclick="setLang('en')">EN</button>
-  <button onclick="setLang('de')">DE</button>
-  <button onclick="setLang('ru')">RU</button>
-</div>
-<div class="container">
-  <header class="fade">
-    <div class="greeting" data-i18n="greeting">Hello, I'm</div>
-    <div class="name-row">
-      <img class="avatar" src="avatar-black.png" alt="" width="64" height="64">
-      <h1>Arsenij Schützer</h1>
+<div class="sheet">
+  <div class="top">
+    <div class="meta">Personalkarte<br>senyaak.work</div>
+    <div class="langs">
+      <button type="button" data-lang="en" aria-current="true" onclick="setLang('en')">EN</button>
+      <button type="button" data-lang="de" aria-current="false" onclick="setLang('de')">DE</button>
+      <button type="button" data-lang="ru" aria-current="false" onclick="setLang('ru')">RU</button>
     </div>
-    <p class="subtitle" data-i18n="subtitle" style="margin-top:.75rem">Fullstack developer — building software professionally since 2018, coding since long before that.</p>
+  </div>
+
+  <header>
+    <div>
+      <div class="label greeting" data-i18n="greeting">Hello, I'm</div>
+      <h1>Arsenij<br>Schützer</h1>
+      <div class="aka">a.k.a. Schuetzer · Шютцер · Шутцер · Щютцер · senyaak</div>
+      <p class="subtitle" data-i18n="subtitle">Fullstack developer — building software professionally since 2018, coding since long before that.</p>
+    </div>
+    <div class="plate">
+      <div class="mount">
+        <img src="avatar-black.png" alt="Pencil drawing of a sloth" width="1024" height="1024" decoding="async">
+        <i></i><i></i>
+      </div>
+      <div class="caption">Abb. 1 — Bradypus, graphite</div>
+    </div>
   </header>
-  <section class="fade">
-    <div class="section-label" data-i18n="section_stack">Stack</div>
-    <div class="stack-grid">
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="" loading="lazy">Vue.js</span>
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" alt="" loading="lazy">Angular</span>
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" loading="lazy">TypeScript</span>
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" loading="lazy">Node.js</span>
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="" loading="lazy">Java</span>
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="" loading="lazy">C#</span>
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" loading="lazy">HTML</span>
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" loading="lazy">CSS</span>
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" loading="lazy">PostgreSQL</span>
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swagger/swagger-original.svg" alt="" loading="lazy">REST APIs</span>
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" loading="lazy">Python</span>
-      <span class="tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy">Git</span>
-      <span class="tag" style="border-style:dashed;color:var(--text-dim)">& more</span>
+
+  <section class="band">
+    <div class="label" data-i18n="l_stack">Stack</div>
+    <div class="rows">
+      <div class="row"><span class="k" data-i18n="g_front">Frontend</span><span class="v">Angular<span class="sep"> · </span>Vue.js<span class="sep"> · </span>TypeScript<span class="sep"> · </span>HTML<span class="sep"> · </span>CSS</span></div>
+      <div class="row"><span class="k" data-i18n="g_back">Backend</span><span class="v">Node.js<span class="sep"> · </span>Java<span class="sep"> · </span>C#<span class="sep"> · </span>Python<span class="sep"> · </span>REST APIs</span></div>
+      <div class="row"><span class="k" data-i18n="g_data">Data</span><span class="v">*SQL<span class="sep"> · </span>MongoDB<span class="sep"> · </span>JSON Schema<span class="sep"> · </span>TypeSpec</span></div>
+      <div class="row"><span class="k" data-i18n="g_tools">Tooling</span><span class="v">Git<span class="sep"> · </span>CI/CD<span class="sep"> · </span>Docker<span class="sep"> · </span>Linux<span class="sep"> · </span>Jira/Scrum<span class="sep"> · </span>AI agents</span></div>
+      <div class="row more"><span class="k">&amp; more</span><span class="v" data-i18n="more_line">If I don't know it yet, I'll learn it.</span></div>
     </div>
   </section>
-  <section class="fade">
-    <div class="section-label" data-i18n="section_about">About</div>
-    <p class="about-text" data-i18n="about_text">Certified IT Specialist — Application Development (Fachinformatiker Anwendungsentwicklung), 2018. Started learning development years before that — through distance studies and self-teaching. Continuously learning and expanding my skill set ever since.</p>
+
+  <section class="band">
+    <div class="label" data-i18n="l_about">About</div>
+    <p class="about" data-i18n="about">Certified IT Specialist — Application Development (Fachinformatiker Anwendungsentwicklung), 2018. Started learning development years before that — through distance studies and self-teaching. Continuously learning and expanding my skill set ever since.</p>
   </section>
-  <section class="fade">
-    <div class="section-label" data-i18n="section_contact">Contact</div>
-    <p class="about-text" data-i18n="contact_text">Open to freelance projects.</p>
+
+  <section class="band">
+    <div class="contact-head">
+      <div class="label" data-i18n="l_contact">Contact</div>
+      <div class="note" data-i18n="contact">Open to freelance projects.</div>
+    </div>
     <div class="links">
-      <a href="https://github.com/senyaak" target="_blank" rel="noopener">
-        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/senyaak/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://vk.com/id97715801" target="_blank" rel="noopener">
-        <svg viewBox="0 0 16 16"><path d="M8.29 13.508H9.2s.274-.03.414-.18c.128-.137.124-.395.124-.395s-.018-1.207.543-1.385c.554-.176 1.265 1.17 2.02 1.687.57.391 1.004.305 1.004.305l2.016-.028s1.054-.065.554-.893c-.04-.068-.29-.613-1.49-1.733-1.258-1.174-1.09-.983.426-3.013.923-1.237 1.293-1.993 1.177-2.317-.11-.308-.79-.227-.79-.227l-2.27.014s-.168-.023-.293.052c-.122.073-.2.245-.2.245s-.36.96-.84 1.776c-1.012 1.724-1.417 1.815-1.583 1.708-.386-.25-.29-1.005-.29-1.54 0-1.675.254-2.374-.496-2.555-.249-.06-.432-.1-1.068-.106-.816-.009-1.506.003-1.897.194-.26.127-.46.41-.338.427.15.02.493.093.674.34.234.32.226 1.037.226 1.037s.134 1.97-.314 2.215c-.308.168-.73-.175-1.636-1.744-.464-.803-.814-1.69-.814-1.69s-.068-.166-.188-.255c-.146-.107-.35-.141-.35-.141l-2.158.014s-.324.009-.443.15c-.106.126-.008.386-.008.386s1.69 3.952 3.602 5.944c1.753 1.827 3.745 1.708 3.745 1.708z"/></svg>
-        VK
-      </a>
-      <a href="mailto:senyaarseniymail@gmail.com">
-        <svg viewBox="0 0 16 16"><path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-.5L8 7l6-3.5H2zM1 4.5V12a1 1 0 001 1h12a1 1 0 001-1V4.5L8.5 8.25a1 1 0 01-1 0L1 4.5z"/></svg>
-        Email
-      </a>
-      <a id="cv-link" href="cv-en.pdf" target="_blank" rel="noopener" download>
-        <svg viewBox="0 0 16 16"><path d="M14 14V4.5L9.5 0H4a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2zM9.5 3A1.5 1.5 0 0011 4.5h2V14a1 1 0 01-1 1H4a1 1 0 01-1-1V2a1 1 0 011-1h5.5v2zM4.603 12.087a.81.81 0 01-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 011.482-.645 19.701 19.701 0 00.97-1.944A7.605 7.605 0 016.339 5.27C6.25 4.662 6.378 4.08 7.01 3.896c.327-.095.613-.025.827.13.208.152.336.371.422.586.145.367.204.846.093 1.385-.11.53-.375 1.164-.73 1.834.358.755.789 1.46 1.173 1.994.388-.1.747-.16 1.065-.17.67-.022 1.196.082 1.454.403.143.178.187.384.14.591a.724.724 0 01-.375.454c-.315.172-.692.177-1.065.094-.38-.086-.792-.267-1.2-.505a15.23 15.23 0 00-1.96.453 14.986 14.986 0 01-1.032 1.513c-.31.394-.603.681-.893.83-.3.154-.609.181-.902.03zM7.3 7.515a7.61 7.61 0 00.416-1.1c.085-.408.038-.706-.04-.896-.03-.075-.059-.125-.082-.152a1 1 0 00-.149.136c-.07.093-.084.177-.033.369.051.193.165.412.32.642a12.88 12.88 0 01-.431 1zm.557 1.515c.227.365.454.692.672.97-.276.083-.557.16-.832.226a7.28 7.28 0 00.552-.853c.18-.295.333-.578.467-.836a17.66 17.66 0 01-.394.71 9.14 9.14 0 01-.465.783zm-2.094 3.008a5.1 5.1 0 01-.415.5c-.151.165-.283.279-.389.336-.023.012-.04.02-.05.024.014-.048.048-.156.154-.354.087-.16.21-.352.36-.564.161.023.305.014.34.058zm2.78-2.08a5.92 5.92 0 00.72.276c.124.02.25.018.364-.007.16-.038.252-.09.294-.116a.518.518 0 00-.128-.067c-.182-.068-.455-.117-.841-.098a5.43 5.43 0 00-.409.012z"/></svg>
-        CV
-      </a>
+      <a href="https://github.com/senyaak" target="_blank" rel="noopener"><span class="k">GitHub</span><span class="v">github.com/senyaak</span><span class="arw">↗</span></a>
+      <a href="https://www.linkedin.com/in/senyaak/" target="_blank" rel="noopener"><span class="k">LinkedIn</span><span class="v">in/senyaak</span><span class="arw">↗</span></a>
+      <a href="mailto:senyaarseniymail@gmail.com"><span class="k">E-Mail</span><span class="v">senyaarseniymail@gmail.com</span></a>
+      <a href="https://vk.com/id97715801" target="_blank" rel="noopener"><span class="k">VK</span><span class="v">id97715801</span><span class="arw">↗</span></a>
+      <a id="cv-link" href="cv-en.pdf" target="_blank" rel="noopener" download><span class="k">CV</span><span class="v" data-i18n="cvLabel">cv-en.pdf</span><span class="arw">↓</span></a>
     </div>
   </section>
-  <footer class="fade">
-    <p>Arsenij Schützer · Pforzheim, Germany</p>
-    <button class="impressum-toggle" onclick="document.querySelector('.impressum-content').classList.toggle('open')">Impressum</button>
-    <div class="impressum-content">Arsenij Schützer<br>Königsberger Str. 4B<br>75181 Pforzheim, Germany<br><br>Tel: +49 162 629 1630<br>E-Mail: senyaarseniymail@gmail.com</div>
+
+  <footer>
+    <div class="loc">Pforzheim, Germany · 48.9°N 8.7°E</div>
+    <button type="button" class="imp-toggle" aria-expanded="false" aria-controls="imp" onclick="toggleImp(this)">Impressum</button>
   </footer>
+  <div class="imp" id="imp">Arsenij Schützer<br>Königsberger Str. 4B<br>75181 Pforzheim, Germany<br>Tel: +49 162 629 1630<br>E-Mail: senyaarseniymail@gmail.com</div>
 </div>
+<div class="colophon"><span>© Arsenij Schützer</span><span>Blatt 1 / 1</span></div>
+
 <script>
-const i18n={
-  en:{greeting:"Hello, I'm",subtitle:"Fullstack developer — building software professionally since 2018, coding since long before that.",section_stack:"Stack",section_about:"About",section_contact:"Contact",about_text:"Certified IT Specialist — Application Development (Fachinformatiker Anwendungsentwicklung), 2018. Started learning development years before that — through distance studies and self-teaching. Continuously learning and expanding my skill set ever since.",contact_text:"Open to freelance projects."},
-  de:{greeting:"Hallo, ich bin",subtitle:"Fullstack-Entwickler — professionell seit 2018, programmiere aber schon deutlich länger.",section_stack:"Tech-Stack",section_about:"Über mich",section_contact:"Kontakt",about_text:"Fachinformatiker Anwendungsentwicklung, Abschluss 2018. Habe schon Jahre davor angefangen zu entwickeln — über Fernstudium und Selbststudium. Bilde mich seitdem kontinuierlich weiter.",contact_text:"Offen für Freelance-Projekte."},
-  ru:{greeting:"Привет, я",subtitle:"Фуллстек-разработчик — профессионально с 2018, но программирую значительно дольше.",section_stack:"Стек",section_about:"Обо мне",section_contact:"Контакт",about_text:"Специалист по разработке программного обеспечения (Fachinformatiker Anwendungsentwicklung), диплом 2018. Начал учиться разработке задолго до этого — дистанционное обучение и самообразование. С тех пор постоянно развиваюсь.",contact_text:"Открыт для фриланс-проектов."}
+const i18n = {
+  en:{greeting:"Hello, I'm",subtitle:"Fullstack developer — building software professionally since 2018, coding since long before that.",l_stack:"Stack",l_about:"About",l_contact:"Contact",about:"Certified IT Specialist — Application Development (Fachinformatiker Anwendungsentwicklung), 2018. Started learning development years before that — through distance studies and self-teaching. Continuously learning and expanding my skill set ever since.",contact:"Open to freelance projects.",g_front:"Frontend",g_back:"Backend",g_data:"Data",g_tools:"Tooling",more_line:"If I don't know it yet, I'll learn it.",cvLabel:"cv-en.pdf"},
+  de:{greeting:"Hallo, ich bin",subtitle:"Fullstack-Entwickler — professionell seit 2018, programmiere aber schon deutlich länger.",l_stack:"Tech-Stack",l_about:"Über mich",l_contact:"Kontakt",about:"Fachinformatiker Anwendungsentwicklung, Abschluss 2018. Habe schon Jahre davor angefangen zu entwickeln — über Fernstudium und Selbststudium. Bilde mich seitdem kontinuierlich weiter.",contact:"Offen für Freelance-Projekte.",g_front:"Frontend",g_back:"Backend",g_data:"Daten",g_tools:"Tooling",more_line:"Was ich noch nicht kenne, lerne ich.",cvLabel:"cv-de.pdf"},
+  ru:{greeting:"Привет, я",subtitle:"Фуллстек-разработчик — профессионально с 2018, но программирую значительно дольше.",l_stack:"Стек",l_about:"Обо мне",l_contact:"Контакт",about:"Специалист по разработке программного обеспечения (Fachinformatiker Anwendungsentwicklung), диплом 2018. Начал учиться разработке задолго до этого — дистанционное обучение и самообразование. С тех пор постоянно развиваюсь.",contact:"Открыт для фриланс-проектов.",g_front:"Фронтенд",g_back:"Бэкенд",g_data:"Данные",g_tools:"Инструменты",more_line:"Если чего-то не знаю — выучу.",cvLabel:"cv-ru.pdf"}
 };
-function setLang(l){document.documentElement.lang=l;document.querySelectorAll('.lang-bar button').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-bar button[onclick="setLang('${l}')"]`).classList.add('active');document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(i18n[l][k])el.textContent=i18n[l][k]});const cv=document.getElementById('cv-link');if(cv)cv.href=`cv-${l}.pdf`;localStorage.setItem('lang',l)}
-const s=localStorage.getItem('lang');if(s&&i18n[s]){setLang(s)}else{const b=(navigator.language||'en').slice(0,2).toLowerCase();if(i18n[b]&&b!=='en')setLang(b)}
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('show');obs.unobserve(x.target)}})},{threshold:.1});
-document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+function toggleImp(btn){const open=document.getElementById('imp').classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false')}
+function setLang(l){
+  if(!i18n[l])return;
+  document.documentElement.lang=l;
+  document.querySelectorAll('.langs button').forEach(b=>b.setAttribute('aria-current',b.dataset.lang===l?'true':'false'));
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const v=i18n[l][el.dataset.i18n];if(v)el.textContent=v});
+  const cv=document.getElementById('cv-link');if(cv)cv.href='cv-'+l+'.pdf';
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+(function(){
+  let l=null;
+  try{l=localStorage.getItem('lang')}catch(e){}
+  if(!l||!i18n[l]){const b=(navigator.language||'en').slice(0,2).toLowerCase();if(i18n[b])l=b}
+  if(l&&l!=='en')setLang(l);
+})();
 </script>
 <script data-goatcounter="https://senyaak.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
