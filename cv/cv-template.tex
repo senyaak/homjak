@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 \usepackage[margin=2cm,top=1.8cm,bottom=2cm]{geometry}
 \usepackage{fontspec}
@@ -8,6 +8,8 @@
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{parskip}
+\usepackage{enumitem}
+\setlist[itemize]{before=\raggedright,leftmargin=1.1em,itemsep=0.1em,topsep=0.2em,parsep=0pt,label={\color{accent}\textbullet}}
 \usepackage[hidelinks]{hyperref}
 
 \setmainfont{DejaVu Sans}[
@@ -24,6 +26,7 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
 
 % Section formatting with accent bar
 \titleformat{\section}
@@ -35,11 +38,28 @@
 % Entry command: date on left, content on right
 \newcommand{\cventry}[3]{%
   \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{4.3cm}@{\hspace{0.6em}}X@{}}
-    {\color{dim}\small\monofont #1} & {\textbf{#2}}\\[-0.1em]
-    & {\color{dim}\small #3}
+    \leavevmode{\color{dim}\small\monofont #1} & {\textbf{#2}}\\[-0.1em]
+    & \leavevmode{\color{dim}\small #3}
   \end{tabularx}%
   \vspace{0.35em}
 }
+
+
+% Job entry: #1=company, #2=dates, #3=role, #4=description
+\newcommand{\cvjob}[4]{%
+  \par\vspace{0.3em}
+  {\textbf{#1}}\hfill{\color{dim}\small\monofont #2}\\
+  {\color{accent}\itshape #3}\par
+  \ifx&#4&\else{\small #4}\par\fi
+}
+
+% Key/value table: \cvkvblock{ \cvkv{key}{value} ... }
+\newcommand{\cvkvblock}[1]{%
+  \par\noindent{\small\begin{tabularx}{\linewidth}{@{}>{\leavevmode\color{dim}}p{4.3cm}@{\hspace{0.6em}}>{\raggedright\arraybackslash}X@{}}#1\end{tabularx}}\par}
+\newcommand{\cvkv}[2]{#1 & #2\\[0.1em]}
+
+% Simple line entry: #1=text, #2=dates
+\newcommand{\cvline}[2]{{#1}\hfill{\color{dim}\small\monofont #2}\par}
 
 % Header builder: #1=name, #2=tagline, #3=contact block
 \newcommand{\cvheader}[3]{%
